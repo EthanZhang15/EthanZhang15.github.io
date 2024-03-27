@@ -33,6 +33,21 @@ body {
 	line-height: 1;
 }
 
+a {
+    text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+    color: darkblue; /* Use the color inherited from the parent element on hover */
+}
+
+.close {
+	position: absolute;
+	top: 30px;
+	right: 40px;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -1954,6 +1969,8 @@ input, select, textarea {
 		-ms-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 		transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
 	}
+
+		
 
 		#main > .panel {
 			-moz-transition: opacity 0.25s ease-in-out;
