@@ -5,7 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 
-		<!-- Home, Portfolio, Interest/personal, Achievements, Contact Me-->
+		<!-- Home, Portfolio, About Me, Contact Me-->
 
 <html>
 	<head>
@@ -24,7 +24,7 @@
 					<nav id="nav">
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
 						<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
-						<a href="#interests" class="icon solid fa-user"><span>Interests</span></a>
+						<a href="#about-me" class="icon solid fa-user"><span>About Me</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 					</nav>
 
@@ -69,7 +69,7 @@
 											<p><a href="#projects-Unix-Shell">Unix Shell</a></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#projects-Memory-Allocator" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+											<a href="#projects-Memory-Allocator" class="image fit"><img src="images/DMA.jpg" alt=""></a>
 											<p><a href="#projects-Memory-Allocator">Dynamic Memory Allocator</a></p>
 										</div>
 									</div>
@@ -103,25 +103,26 @@
 								</header>
 								<section>
 									<div class="col-4 col-6-medium col-12-small">
-										<p>Pintos is a simple operating system framework for the 80x86 architecture.
+										<p>Pintos is a simple operating system framework for the 80x86 architecture that can 
+											run on a regular IBM-compatible PC.
 											It supports kernel threads, loading and running user programs, and a file system. 
-											Pintos could, theoretically, run on a regular IBM-compatible PC.
+											I implemented Pintos in 4 seperate parts as described below.
 											<br><br>
 											Threads: I introduced priority scheduling and priority donation to handle priority inversion.
 											This involved adding a priority variable to the thread's TCB and sorting the ready queue accordingly.
 											<br><br>
-											User Programs: Implemented essential system calls such as halt, exit, exec, wait, create, remove, open, 
-											filesize, read, write, seek, tell, and close. Additionally, I managed stack allocation for user programs 
+											User Programs: I implemented essential system calls such as halt, exit, exec, wait, create, remove, open, 
+											filesize, read, write, seek, tell, and close. Additionally, I also managed stack allocation for user programs 
 											and enabled argument passing.
 											<br><br>
-											Virtual Memory: Extended the system to accommodate stack growth and implemented paging using a supplemental 
-											page table, frame table, and swap table. Implemented demand paging and eviction based on an enhanced clock 
-											algorithm considering dirty pages.
+											Virtual Memory: I extended the system to accommodate stack growth and implemented paging using a supplemental 
+											page table, frame table, and swap table. Demand paging and eviction based on an enhanced clock 
+											algorithm considering dirty pages was also included.
 											<br><br>
-											File Systems: Enhanced the file system to support indexed and extensible files with subdirectories. 
-											Implemented a multilevel indexed structure with 10 direct blocks, 1 indirect block, and 1 double indirect 
-											block to handle various file sizes. Added system calls like chdir, mkdir, readdir, isdir, and inumber to 
-											support subdirectories.
+											File Systems: I enhanced the file system to support indexed and extensible files with subdirectories. This 
+											was done through a multilevel indexed structure with 10 direct blocks, 1 indirect block, and 1 double indirect 
+											block to handle various file sizes (based on FFS). Lastly system calls like chdir, mkdir, readdir, isdir, and inumber to 
+											support subdirectories were all added.
 										</p>
 									</div>
 								</section>
@@ -136,10 +137,30 @@
 									<h2>chArm-v2 System Emulator</h2>
 								</header>
 								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<p>This chArm-v2</p>
-										</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<p> I developed a pipeline along with a cache simulator for the chArm-v2 instruction set architecture using C. 
+											This instruction subset comprises LDUR, STUR, MOVK, MOVZ, ADRP, ADD, ADDS, SUB, SUBS, CMP, MVN, OR, EOR, 
+											ANDS, TST, LSL, LSR, UBFM, ASR, B, B.cond, BL, RET, NOP, and HLT.
+
+											For each instruction, I programmed the five stages: Fetch, Decode, Execute, Memory, and Writeback. Additionally, 
+											I addressed the data and control hazards inherent in this pipeline implementation.
+											<br><br>
+											Fetch:
+											In the fetch stage, I retrieved the instruction associated with the current PC (program counter).
+											<br><br>
+											Decode:
+											During the decode stage, I deciphered the instruction to determine the correct operation and set control 
+											signals for subsequent stages.
+											<br><br>
+											Execute:
+											In the execute stage, I passed the instruction through the arithmetic logic unit to perform the 
+											designated operation.
+											<br><br>
+											Memory and Writeback:
+											The memory stage involved accessing memory when necessary for executing an instruction. I incorporated 
+											a write-back cache using the LRU (Least Recently Used) replacement policy to enhance efficiency. In the 
+											writeback stage, I stored the result of the instruction.
+											To manage data and control hazards, I inserted bubble (NOP) and stall instructions. Furthermore, I facilitated the forwarding of values from the execute, memory, and writeback stages back to decode.</p>
 									</div>
 								</section>
 							</article>
@@ -153,10 +174,32 @@
 									<h2>Unix Shell</h2>
 								</header>
 								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<p>This Unix Shell</p>
-										</div>
+									<div class="col-4 col-6-medium col-12-small">
+										<p>In this project I created a simple Unix shell in C, which serves as a command-line interpreter (CLI) similar to 
+											those found in Unix-based operating systems like Linux. 
+											The project is divided into several parts, each focusing on different aspects of shell functionality.
+
+											Learning about fork() and wait(): This part introduces students to the concepts of process creation and 
+											management in Unix-like systems using the fork() and wait() system calls. Students implement a simple 
+											program to compute Fibonacci numbers recursively using these system calls.
+											
+											Part 1: Signal Handling: Students learn about signal handling in Unix-like systems, particularly handling 
+											signals like SIGINT (generated by Ctrl+C) and SIGUSR1. They implement a program that prints its process ID 
+											and loops, responding to signals like SIGINT with a custom message.
+											
+											Part 2: Shell Skeleton: This part involves building the basic framework of a shell, including a 
+											Read-Evaluate-Print Loop (REPL), parsing commands, handling built-in commands like cd and path, executing external 
+											commands, and implementing error handling.
+											
+											Part 3: Advanced Shell Features: Students extend the shell's functionality by adding features like managing 
+											paths for external commands, implementing output redirection (>) to files, and allowing concurrent execution of 
+											multiple commands using the ampersand (&) operator.
+											
+											The project emphasizes understanding key Unix concepts such as process management, signal handling, and file I/O, 
+											while also providing practical experience in C programming and system calls. Additionally, students learn about 
+											command-line interface design and implementation, which are fundamental skills for systems programming and software 
+											development in Unix-like environments.	
+										</p>
 									</div>
 								</section>
 							</article>
@@ -171,43 +214,49 @@
 								</header>
 								<section>
 									<div class="col-4 col-6-medium col-12-small">
-										<p>This Dynamic Memory Allocator</p>
+										<p>I created a dynamic memory allocator for C.
+											The malloc and free functions I implemented utilized a linked list to manage free memory blocks. 
+											Each block contained metadata such as its size, allocation status, and a pointer to the next block. 
+											Upon a malloc call, the program searches for the appropriate free block, removes it from the list, 
+											and returns it to the user. When free is called, the block is reinserted into the list in sorted order, 
+											and adjacent blocks are merged if needed. If the free list is full, the program requests additional 
+											memory from the operating system.</p>
 									</div>
 								</section>
 							</article>
 
-						<!-- Interest -->
-							<article id="interests" class="panel">
+						<!-- About me -->
+							<article id="about-me" class="panel">
 								<header>
-									<h2>Interests</h2>
+									<h2>About Me</h2>
 								</header>
 								<section>
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#interests-climbing">
+											<a href="#about-me-climbing">
 												<div style="text-align: center;">
 													<video autoplay muted loop playsinline class="image fit" src="images/FredsFinish.mov" alt=""></video>
 												</div>
 											</a>
-											<p><a href="#interests-climbing">Climbing</a></p>
+											<p><a href="#about-me-climbing">Climbing</a></p>
 										</div>
 
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#interests-calisthenics">
+											<a href="#about-me-calisthenics">
 												<div style="text-align: center;">
 													<video autoplay muted loop playsinline class="image fit" src="images/BeastmakerMiddle.mov" alt=""></video>
 												</div>
 											</a>
-											<p><a href="#interests-calisthenics">Calisthenics</a></p>
+											<p><a href="#about-me-calisthenics">Calisthenics</a></p>
 										</div>
 									</div>
 								</section>
 							</article>
 
 						<!-- Climbing -->
-							<article id="interests-climbing" class="panel">
+							<article id="about-me-climbing" class="panel">
 								<div class="close">
-									<a href="#interests" class="fas fa-times-circle"></a>
+									<a href="#about-me" class="fas fa-times-circle"></a>
 								</div>
 								<header>
 									<h2>Climbing</h2>
@@ -261,9 +310,9 @@
 							</article>
 
 						<!-- Calisthenics -->
-							<article id="interests-calisthenics" class="panel">
+							<article id="about-me-calisthenics" class="panel">
 								<div class="close">
-									<a href="#interests" class="fas fa-times-circle"></a>
+									<a href="#about-me" class="fas fa-times-circle"></a>
 								</div>
 								<header>
 									<h2>Calisthenics</h2>
