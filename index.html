@@ -53,23 +53,24 @@
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
 											<a href="#projects-Personal-Site" class="image fit"><img src="images/PersonalSite.jpg" alt=""></a>
-											<p>Personal Website</p>
+											<p><a href="#projects-Personal-Site">Personal Website</a></p>
+
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#projects-prj1" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-											<p>Pintos</p>
+											<a href="#projects-Pintos" class="image fit"><img src="images/Pintos.jpg" alt=""></a>
+											<p><a href="#projects-Pintos">Pintos</a></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#projects-prj1" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-											<p>Charm-v2 System Emulator</p>
+											<a href="#projects-chArm" class="image fit"><img src="images/chArm.jpg" alt=""></a>
+											<p><a href="#projects-chArm">chArm-v2 System Emulator</a></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#projects-prj1" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-											<p>Unix Shell</p>
+											<a href="#projects-Unix-Shell" class="image fit"><img src="images/Shell.jpg" alt=""></a>
+											<p><a href="#projects-Unix-Shell">Unix Shell</a></p>
 										</div>
 										<div class="col-4 col-6-medium col-12-small">
-											<a href="#projects-prj1" class="image fit"><img src="images/pic01.jpg" alt=""></a>
-											<p>Dynamic Memory Allocator</p>
+											<a href="#projects-Memory-Allocator" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+											<p><a href="#projects-Memory-Allocator">Dynamic Memory Allocator</a></p>
 										</div>
 									</div>
 								</section>
@@ -88,6 +89,89 @@
 										<div class="col-4 col-6-medium col-12-small">
 											<p>This my personal site</p>
 										</div>
+									</div>
+								</section>
+							</article>
+
+						<!-- Pintos -->
+							<article id="projects-Pintos" class="panel">
+								<div class="close">
+									<a href="#projects" class="fas fa-times-circle"></a>
+								</div>
+								<header>
+									<h2>Pintos</h2>
+								</header>
+								<section>
+									<div class="col-4 col-6-medium col-12-small">
+										<p>Pintos is a simple operating system framework for the 80x86 architecture.
+											It supports kernel threads, loading and running user programs, and a file system. 
+											Pintos could, theoretically, run on a regular IBM-compatible PC.
+											<br><br>
+											Threads: I introduced priority scheduling and priority donation to handle priority inversion.
+											This involved adding a priority variable to the thread's TCB and sorting the ready queue accordingly.
+											<br><br>
+											User Programs: Implemented essential system calls such as halt, exit, exec, wait, create, remove, open, 
+											filesize, read, write, seek, tell, and close. Additionally, I managed stack allocation for user programs 
+											and enabled argument passing.
+											<br><br>
+											Virtual Memory: Extended the system to accommodate stack growth and implemented paging using a supplemental 
+											page table, frame table, and swap table. Implemented demand paging and eviction based on an enhanced clock 
+											algorithm considering dirty pages.
+											<br><br>
+											File Systems: Enhanced the file system to support indexed and extensible files with subdirectories. 
+											Implemented a multilevel indexed structure with 10 direct blocks, 1 indirect block, and 1 double indirect 
+											block to handle various file sizes. Added system calls like chdir, mkdir, readdir, isdir, and inumber to 
+											support subdirectories.
+										</p>
+									</div>
+								</section>
+							</article>
+
+						<!-- chArm -->
+							<article id="projects-chArm" class="panel">
+								<div class="close">
+									<a href="#projects" class="fas fa-times-circle"></a>
+								</div>
+								<header>
+									<h2>chArm-v2 System Emulator</h2>
+								</header>
+								<section>
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<p>This chArm-v2</p>
+										</div>
+									</div>
+								</section>
+							</article>
+
+						<!-- Unix Shell -->
+							<article id="projects-Unix-Shell" class="panel">
+								<div class="close">
+									<a href="#projects" class="fas fa-times-circle"></a>
+								</div>
+								<header>
+									<h2>Unix Shell</h2>
+								</header>
+								<section>
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<p>This Unix Shell</p>
+										</div>
+									</div>
+								</section>
+							</article>
+
+						<!-- Dynamic Memory Allocator -->
+							<article id="projects-Memory-Allocator" class="panel">
+								<div class="close">
+									<a href="#projects" class="fas fa-times-circle"></a>
+								</div>
+								<header>
+									<h2>Dynamic Memory Allocator</h2>
+								</header>
+								<section>
+									<div class="col-4 col-6-medium col-12-small">
+										<p>This Dynamic Memory Allocator</p>
 									</div>
 								</section>
 							</article>
